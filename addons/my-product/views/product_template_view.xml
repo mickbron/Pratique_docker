@@ -30,7 +30,7 @@
                         <field name="outdoor_fireplace_available" />
                         <field name="dedicated_workspace_available" />
                         <field name="gym_available" />
-                    </group>
+                    </group>+
                     <group string="Accessibility">
                         <field name="toilet_grab_bar_available" />
                         <field name="shower_grab_bar_available" />
