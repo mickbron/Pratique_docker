@@ -1,21 +1,21 @@
 from type_labels import get_type_label
 
 
-def createProductCard(product):
-    name = product.get("name", "Sans nom")
-    list_price = product.get("list_price") or 0
-    type_label = get_type_label(product.get("type"))
-    default_code = product.get("default_code") or "N/A"
+def createProductCard(p):
+    name = p.get("name", "Sans nom")
+    price = p.get("list_price") or 0
+    ref = p.get("default_code") or "N/A"
+    type_label = get_type_label(p.get("type"))
 
-    categ = product.get("categ_id")
+    categ = p.get("categ_id")
     categ_name = categ[1] if isinstance(categ, list) else "Sans catégorie"
 
     return f"""
     <div class="product-card">
-        <h3 class="product-name">{name}</h3>
-        <p class="product-type">{type_label}</p>
-        <p class="product-price">{list_price:.2f} €</p>
-        <p><strong>Réf :</strong> {default_code}</p>
-        <p><strong>Catégorie :</strong> {categ_name}</p>
+        <h3>{name}</h3>
+        <p>{type_label}</p>
+        <p><strong>{price:.2f} €</strong></p>
+        <p>Réf : {ref}</p>
+        <p>{categ_name}</p>
     </div>
     """

@@ -13,5 +13,4 @@ def load_products():
         "limit": 50,
     }
 
-    products = call_odoo("product.template", "search_read", [], kwargs)
-    return products
+    return call_odoo("product.template", "search_read", [], kwargs)
